@@ -22,7 +22,10 @@ switching to windows engine: Post "http://ipc/engine/switch": open \\.\pipe\dock
 
 3.安装 minikube
 https://minikube.sigs.k8s.io/docs/start/?arch=%2Fwindows%2Fx86-64%2Fstable%2F.exe+download windows 安装方式
+minikube start --vm-driver docker --container-runtime=docker
 安装过程中无法连接dokcer的镜像源，需要走外网，多试几次
+启动后可以在docker 桌面端看到
+![image](https://github.com/user-attachments/assets/3d794746-98df-4d06-9b08-036738650cbc)
 
 
 
