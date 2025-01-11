@@ -43,6 +43,15 @@ Docker 默认创建一个虚拟网桥（docker0），容器的虚拟网络接口
 ## 容器与互联网的交互
 NAT 转换：
 在 bridge 模式下，容器通过宿主机的 NAT 转换访问互联网。
-流程：容器发起请求 → 宿主机的虚拟网桥（docker0） → NAT 转换 → 宿主机的物理网卡 → 互联网。
+流程：容器发起请求 → 宿主机的虚拟网桥（docker0） → NAT 转换 → 宿主机的物理网卡 → 互联网。反向同理
 
+minikube start --vm-driver docker --container-runtime=docker 这个命令是用docker启动了minikube， 实际执行命令都是转发到docker 中
+
+3.安装kubectl 一个快捷命令工具
+https://kubernetes.io/zh-cn/docs/tasks/tools/install-kubectl-windows/
+kubectl 版本和集群版本之间的差异必须在一个小版本号内。 例如：v1.32 版本的客户端能与 v1.31、 v1.32 和 v1.33 版本的控制面通信。
+安装命令 
+```
+curl.exe -LO "https://dl.k8s.io/release/v1.34.0/bin/windows/amd64/kubectl.exe"  --奇怪，无法覆盖docker desktop装的 -_- 先暂时忽略
+```
 
