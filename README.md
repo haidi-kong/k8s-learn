@@ -20,6 +20,9 @@ PS C:\Program Files\Docker\Docker> .\DockerCli.exe -SwitchDaemon
 switching to windows engine: Post "http://ipc/engine/switch": open \\.\pipe\dockerBackendApiServer: The system cannot find the file specified.
 ```
 
+3.安装 minikube
+https://minikube.sigs.k8s.io/docs/start/?arch=%2Fwindows%2Fx86-64%2Fstable%2F.exe+download windows 安装方式
+
 
 
 
