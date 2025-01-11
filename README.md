@@ -22,6 +22,7 @@ switching to windows engine: Post "http://ipc/engine/switch": open \\.\pipe\dock
 
 3.安装 minikube
 https://minikube.sigs.k8s.io/docs/start/?arch=%2Fwindows%2Fx86-64%2Fstable%2F.exe+download windows 安装方式
+安装过程中无法连接dokcer的镜像源，需要走外网，多试几次
 
 
 
