@@ -63,3 +63,23 @@ docker build . -f Dockerfile.dev -t 908364810/hellok8s:v1
 ERROR: failed to solve: golang:1.16-buster: failed to resolve source metadata for docker.io/library/golang:1.16-buster: failed to authorize: failed to fetch oauth token: Post "https://auth.docker.io/token": dial tcp 199.59.149.234:443: connectex: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond.
 View build details: docker-desktop://dashboard/build/desktop-linux/desktop-linux/ah35lae2w4ztxi17ih3zqi7w
 ```
+启动容器
+```
+docker run -p 3000:3000 --name hellok8s -d 908364810/hellok8s:v1
+```
+启动之后有三个地址 
+以太网适配器 vEthernet (WSL):
+   连接特定的 DNS 后缀 . . . . . . . :
+   本地链接 IPv6 地址. . . . . . . . : fe80::ab7:56a2:c4b0:4fbd%49
+   IPv4 地址 . . . . . . . . . . . . : 172.23.48.1 --可以访问
+   子网掩码  . . . . . . . . . . . . : 255.255.240.0
+   默认网关. . . . . . . . . . . . . :
+以太网适配器 vEthernet (Default Switch):--可以访问
+   连接特定的 DNS 后缀 . . . . . . . :
+   本地链接 IPv6 地址. . . . . . . . : fe80::390d:7776:e9fd:7a4d%16
+   IPv4 地址 . . . . . . . . . . . . : 172.19.0.1
+   子网掩码  . . . . . . . . . . . . : 255.255.240.0
+   默认网关. . . . . . . . . . . . .
+
+minikube ip  
+192.168.58.2   --无法访问
