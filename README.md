@@ -54,4 +54,8 @@ kubectl 版本和集群版本之间的差异必须在一个小版本号内。 �
 ```
 curl.exe -LO "https://dl.k8s.io/release/v1.34.0/bin/windows/amd64/kubectl.exe"  --奇怪，无法覆盖docker desktop装的 -_- 先暂时忽略
 ```
-
+4.构建容器
+```
+docker build . -t 908364810/hellok8s:v1
+docker build -f Dockerfile.dev -t 908364810/hellok8s:v1
+```
