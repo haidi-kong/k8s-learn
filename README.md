@@ -58,9 +58,8 @@ curl.exe -LO "https://dl.k8s.io/release/v1.34.0/bin/windows/amd64/kubectl.exe"  
 ```
 docker build . -f Dockerfile.dev -t 908364810/hellok8s:v1
 ```
-出现如下报错，估计是网络原因
+出现如下报错，估计是网络原因，发现不是，是镜像源的问题，https://blog.csdn.net/m0_70878103/article/details/144130047 在docker desk中增加镜像源就行
 ```
 ERROR: failed to solve: golang:1.16-buster: failed to resolve source metadata for docker.io/library/golang:1.16-buster: failed to authorize: failed to fetch oauth token: Post "https://auth.docker.io/token": dial tcp 199.59.149.234:443: connectex: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond.
-
 View build details: docker-desktop://dashboard/build/desktop-linux/desktop-linux/ah35lae2w4ztxi17ih3zqi7w
 ```
