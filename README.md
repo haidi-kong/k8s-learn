@@ -57,5 +57,5 @@ curl.exe -LO "https://dl.k8s.io/release/v1.34.0/bin/windows/amd64/kubectl.exe"  
 4.构建容器
 ```
 docker build . -t 908364810/hellok8s:v1
-docker build -f Dockerfile.dev -t 908364810/hellok8s:v1
+docker build . -f Dockerfile.dev -t 908364810/hellok8s:v1
 ```
