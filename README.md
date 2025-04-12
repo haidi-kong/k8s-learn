@@ -89,9 +89,23 @@ minikube ip
 ```
 使用 nginx.yaml 构建pod，使用如下命令
 ```
-kubectl apply -f nginx.yaml
+kubectl apply -f nginx.yaml  #构建 k8s nginx pod，会自动从dokcerhub 拉取镜像，然后构建，注意，这里机器要连上外网，否则会拉取镜像失败
+kubectl port-forward nginx-pod 4000:80   #命令将 nginx 默认的 80 端口映射到本机的 4000 端口，打开浏览器或者 curl 来访问 http://127.0.0.1:4000 , 查看是否成功访问 nginx 默认页面！
+
+kubectl exec -it nginx-pod -- /bin/bash #进入pod
+
+echo "hello kubernetes by nginx!" > /usr/share/nginx/html/index.html #修改
+exit #退出pod
+
+kubectl logs --follow nginx-pod #查看Pod日志
+                              
+kubectl exec nginx-pod -- ls #查看pod文件
+
+kubectl delete pod nginx-pod # pod "nginx-pod" deleted
+
+kubectl delete -f nginx.yaml # pod "nginx-pod" deleted
 ```
-发现如下报错，Unable to connect to the server: dial tcp 127.0.0.1:6443: connectex: No connection could be made because the target machine actively refused it #12448
+使用kubtcl命令发现如下报错，Unable to connect to the server: dial tcp 127.0.0.1:6443: connectex: No connection could be made because the target machine actively refused it #12448
 可以参考https://stackoverflow.com/questions/50490808/unable-to-connect-to-the-server-dial-tcp-18080-connectex-no-connection-c 这个解决，开启dockerhub 的k8s
 
 
