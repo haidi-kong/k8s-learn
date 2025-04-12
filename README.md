@@ -105,7 +105,8 @@ kubectl delete pod nginx-pod # pod "nginx-pod" deleted
 kubectl delete -f nginx.yaml # pod "nginx-pod" deleted
 ```
 使用kubtcl命令发现如下报错，Unable to connect to the server: dial tcp 127.0.0.1:6443: connectex: No connection could be made because the target machine actively refused it #12448
-可以参考https://stackoverflow.com/questions/50490808/unable-to-connect-to-the-server-dial-tcp-18080-connectex-no-connection-c 这个解决，开启dockerhub 的k8s
+可以参考https://stackoverflow.com/questions/50490808/unable-to-connect-to-the-server-dial-tcp-18080-connectex-no-connection-c 这个解决，开启dockerhub 的k8s 
+注意这里是使用了dockerhub 的k8s，没有用minikube的，所以要切换到dokcerhub的k8s
 
 https://kubernetes.io/zh-cn/docs/reference/kubectl/quick-reference/ 命令大全
 pod 和dokcer container 的关系：pod管理container
