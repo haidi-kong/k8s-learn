@@ -54,7 +54,7 @@ kubectl 版本和集群版本之间的差异必须在一个小版本号内。 �
 ```
 curl.exe -LO "https://dl.k8s.io/release/v1.34.0/bin/windows/amd64/kubectl.exe"  --奇怪，无法覆盖docker desktop装的 -_- 先暂时忽略
 ```
-4.构建容器
+**4.使用docker构建容器**
 ```
 docker build . -f Dockerfile.dev -t 908364810/hellok8s:v1
 ```
@@ -83,5 +83,15 @@ docker run -p 3000:3000 --name hellok8s -d 908364810/hellok8s:v1
 
 minikube ip  
 192.168.58.2   --无法访问
+
+```
+**4.使用k8s 构建nginx-pod**
+```
+使用 nginx.yaml 构建pod，使用如下命令
+```
+kubectl apply -f nginx.yaml
+```
+发现如下报错，Unable to connect to the server: dial tcp 127.0.0.1:6443: connectex: No connection could be made because the target machine actively refused it #12448
+可以参考https://stackoverflow.com/questions/50490808/unable-to-connect-to-the-server-dial-tcp-18080-connectex-no-connection-c 这个解决，开启dockerhub 的k8s
 
 
